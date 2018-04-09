@@ -60,4 +60,44 @@ public class Ad {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getLow_price() {
+        return low_price;
+    }
+
+    public void setLow_price(double low_price) {
+        this.low_price = low_price;
+    }
+
+    public double getHigh_price() {
+        return high_price;
+    }
+
+    public void setHigh_price(double high_price) {
+        this.high_price = high_price;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
+    }
 }
