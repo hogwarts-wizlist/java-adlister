@@ -26,6 +26,7 @@ INSERT INTO categories(id, title) VALUES
   (9, 'Services'),
   (10, 'Books');
 
+# Ad cat pivot
 INSERT INTO ad_cat(ad_id, cat_id) VALUES
   (1, 1),
   (2, 4),
