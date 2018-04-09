@@ -11,6 +11,6 @@ import java.io.IOException;
 public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        Serve CreateAD
-        request.getRequestDispatcher("WEB-INF/create_ad.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/ads/create_ad.jsp").forward(request, response);
     }
 }
