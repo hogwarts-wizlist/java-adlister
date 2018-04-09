@@ -23,7 +23,7 @@ public class Ad {
         this.updated_at = updated_at;
     }
 
-    public Ad(long userId, String title, String description) {
+    public Ad(long id, long userId, String title, String description, double aDouble, double low_price, double price) {
         this.userId = userId;
         this.title = title;
         this.description = description;
