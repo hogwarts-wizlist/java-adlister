@@ -12,6 +12,6 @@ public class AdsIndexServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        Serve the adsindex.jsp
-        request.getRequestDispatcher("WEB-INF/ads_index.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/ads/ads_index.jsp").forward(request, response);
     }
 }
