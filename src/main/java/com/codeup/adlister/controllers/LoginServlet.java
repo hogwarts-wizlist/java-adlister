@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "IndexServlet", urlPatterns = "/")
-public class IndexServlet extends HttpServlet {
+@WebServlet(name = "LoginServlet", urlPatterns = "/login")
+public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        Send the user to the main page
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+//        Serve Login
+        request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
     }
 }
