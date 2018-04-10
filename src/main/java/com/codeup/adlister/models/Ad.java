@@ -16,7 +16,7 @@ public class Ad {
     private String rating;
     private List<String> categories;
 
-    public Ad(long id, long userId, String title, String description, double price, double low_price, double high_price, String created_at, String updated_at, String ad_image) {
+    public Ad(long id, long userId, String title, String description, double price, double low_price, double high_price) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -24,9 +24,8 @@ public class Ad {
         this.price = price;
         this.low_price = low_price;
         this.high_price = high_price;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.ad_image = ad_image;
+//        this.created_at = created_at;
+//        this.updated_at = updated_at;
     }
 
     public Ad(long id, long userId, String title, String description, double aDouble, double low_price, double price, String ad_image) {
@@ -36,7 +35,7 @@ public class Ad {
         this.description = description;
     }
 
-    public Ad(long userId, String title, String description, double price, double low_price, double high_price, String ad_image) {
+    public Ad(long userId, String title, String description, Double price, double low_price, double high_price, String ad_image) {
         this.userId = userId;
         this.title = title;
         this.description = description;
