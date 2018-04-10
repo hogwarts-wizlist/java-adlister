@@ -10,8 +10,9 @@ public class Ad {
     private double high_price;
     private String created_at;
     private String updated_at;
+    private String ad_image;
 
-    public Ad(long id, long userId, String title, String description, double price, double low_price, double high_price, String created_at, String updated_at) {
+    public Ad(long id, long userId, String title, String description, double price, double low_price, double high_price, String created_at, String updated_at, String ad_image) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -21,6 +22,7 @@ public class Ad {
         this.high_price = high_price;
         this.created_at = created_at;
         this.updated_at = updated_at;
+        this.ad_image = ad_image;
     }
 
     public Ad(long id, long userId, String title, String description, double aDouble, double low_price, double price) {
@@ -99,5 +101,13 @@ public class Ad {
 
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public String getAd_image() {
+        return ad_image;
+    }
+
+    public void setAd_image(String ad_image) {
+        this.ad_image = ad_image;
     }
 }
