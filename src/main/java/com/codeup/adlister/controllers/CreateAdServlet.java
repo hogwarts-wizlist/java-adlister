@@ -27,6 +27,7 @@ public class CreateAdServlet extends HttpServlet {
         double price = Double.parseDouble(request.getParameter("price"));
         double low_price = Double.parseDouble(request.getParameter("low_price"));
         double high_price = Double.parseDouble(request.getParameter("high_price"));
+        String ad_image = request.getParameter("high_price");
         Ad newAd = new Ad(
                 1,
                 1,
@@ -34,7 +35,8 @@ public class CreateAdServlet extends HttpServlet {
                 description,
                 price,
                 low_price,
-                high_price
+                high_price,
+                ad_image
         );
     }
 
