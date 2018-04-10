@@ -30,6 +30,7 @@ public class Ad {
     }
 
     public Ad(long id, long userId, String title, String description, double aDouble, double low_price, double price, String ad_image) {
+
         this.userId = userId;
         this.title = title;
         this.description = description;
