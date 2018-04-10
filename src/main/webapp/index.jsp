@@ -5,7 +5,8 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="WizList" />
     </jsp:include>
-    <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">    <style>
+    <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
+    <style>
         <%@ include file="/stylesheets/navbar.css"%>
     </style>
 </head>
