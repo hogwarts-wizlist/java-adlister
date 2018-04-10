@@ -7,12 +7,12 @@ INSERT INTO users(username, password, email, first_name, last_name, biography, p
   ('zachyboi', '12345', 'email2@email.com', 'Zach', 'Ramos', 'I dislike all humans. Turtle master race!', NULL, NOW(), NOW());
 
 # Seed Ads
-INSERT INTO ads(user_id, title, description, price, low_price, high_price, created_at, updated_at) VALUES
-  (1, 'Wand', 'a super powerful wand capable of vaporizing muggles', 150, null, null, NOW(), NOW()),
-  (1, 'Robe', 'Cloak that looks cool but isn\'t magical, but its cool', 18, null, null, NOW(), NOW()),
-  (1, 'Dragon', 'It looks like a dragon, but pretty sure it is actually not', 11000, null, null, NOW(), NOW()),
-  (2, 'Subscription to Muggle Daily', 'Learn all about muggles and the muggle world', null, 10, 50, NOW(), NOW()),
-  (3, 'Love Potion', 'A very powerful love potion that promises to make your crush into a menace.', 832, null, null, NOW(), NOW());
+INSERT INTO ads(user_id, title, description, price, created_at, updated_at) VALUES
+  (1, 'Wand', 'a super powerful wand capable of vaporizing muggles', 150, NOW(), NOW()),
+  (1, 'Robe', 'Cloak that looks cool but isn\'t magical, but its cool', 18, NOW(), NOW()),
+  (1, 'Dragon', 'It looks like a dragon, but pretty sure it is actually not', 11000,  NOW(), NOW()),
+  (2, 'Subscription to Muggle Daily', 'Learn all about muggles and the muggle world', 50, NOW(), NOW()),
+  (3, 'Love Potion', 'A very powerful love potion that promises to make your crush into a menace.', 832, NOW(), NOW());
 
 INSERT INTO categories(id, title) VALUES
   (1, 'Wands'),

@@ -1,5 +1,6 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
 
 import javax.servlet.ServletException;
@@ -16,19 +17,15 @@ public class CreateAdServlet extends HttpServlet {
         String title = request.getParameter("title");
         String description = request.getParameter("description");
         double price = Double.parseDouble(request.getParameter("price"));
-        double low_price = Double.parseDouble(request.getParameter("low_price"));
-        double high_price = Double.parseDouble(request.getParameter("high_price"));
-        String ad_image = request.getParameter("ad_image");
+
         Ad newAd = new Ad(
-                1,
-                1,
+            1,
                 title,
                 description,
-                price,
-                low_price,
-                high_price,
-                ad_image
+                price
         );
+        DaoFactory.getAdsDao().insert(newAd);
+        response.sendRedirect("/ads");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
