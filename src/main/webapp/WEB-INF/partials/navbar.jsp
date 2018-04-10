@@ -8,11 +8,15 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/ads">WizList</a>
         </div>
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="/ads_index">View Ads</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/create">Create</a></li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/login">Login</a></li>
             <li><a href="/register">Register</a></li>
-            <%--<li><a href="/ads_index">View Ads</a></li>--%>
-            <%--<li><a href="/logout">Logout</a></li>--%>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/logout">Logout</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
