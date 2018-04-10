@@ -37,13 +37,28 @@ public class MySQLAdsDao implements Ads {
                 return createAdsFromResults(rs);
             } catch (SQLException e) {
                 throw new RuntimeException("Error retrieving all ads.", e);
-
             }
         }
 
         @Override
         public Long insert (Ad ad) {
-            return null;
+            try {
+                String insertQuery = "INSERT INTO ads(user_id, title, description, price, low_price, high_price, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?)";
+                PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+                stmt.setLong(1, 1);
+                stmt.setString(2, ad.getTitle());
+                stmt.setString(3, ad.getDescription());
+                stmt.setDouble(4, ad.getPrice());
+                stmt.setDouble(5, ad.getLow_price());
+                stmt.setDouble(6, ad.getHigh_price());
+                stmt.setString(7, ad.getCreated_at());
+                stmt.setString(8, ad.getUpdated_at());
+                stmt.executeUpdate();
+                ResultSet rs = stmt.getGeneratedKeys();
+                return rs.getLong(1);
+            } catch (SQLException e) {
+                throw new RuntimeException("Error creating a new ad.", e);
+            }
         }
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(

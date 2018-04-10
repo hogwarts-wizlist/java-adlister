@@ -1,5 +1,7 @@
 package com.codeup.adlister.models;
 
+import java.util.List;
+
 public class Ad {
     private long id;
     private long userId;
@@ -10,9 +12,41 @@ public class Ad {
     private double high_price;
     private String created_at;
     private String updated_at;
+    private String ad_image;
+    private String rating;
+    private List<String> categories;
 
-    public Ad(long id, long userId, String title, String description, double price, double low_price, double high_price, String created_at, String updated_at) {
+    public Ad(long id, long userId, String title, String description, double price, double low_price, double high_price) {
         this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.low_price = low_price;
+        this.high_price = high_price;
+//        this.created_at = created_at;
+//        this.updated_at = updated_at;
+    }
+
+    public Ad(long id, long userId, String title, String description, double aDouble, double low_price, double price, String ad_image) {
+
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+    }
+
+    public Ad(long userId, String title, String description, Double price, double low_price, double high_price, String ad_image) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.low_price = low_price;
+        this.high_price = high_price;
+        this.ad_image = ad_image;
+    }
+
+//    Used for insert method
+    public Ad(long userId, String title, String description, double price, double low_price, double high_price, String created_at, String updated_at) {
         this.userId = userId;
         this.title = title;
         this.description = description;
@@ -21,12 +55,6 @@ public class Ad {
         this.high_price = high_price;
         this.created_at = created_at;
         this.updated_at = updated_at;
-    }
-
-    public Ad(long id, long userId, String title, String description, double aDouble, double low_price, double price) {
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
     }
 
     public long getId() {
@@ -99,5 +127,13 @@ public class Ad {
 
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public String getAd_image() {
+        return ad_image;
+    }
+
+    public void setAd_image(String ad_image) {
+        this.ad_image = ad_image;
     }
 }
