@@ -20,7 +20,7 @@
 
 <div class="form-container">
     <h1>Create an Ad:</h1>
-    <form action="/ads/create" method="POST">
+    <form action="/create" method="POST">
         <div class="form-group">
             <label for="title">Title</label>
             <input id="title" name="title" class="form-control" value="${title}"type="text">
@@ -34,15 +34,7 @@
             <input id="price" name="price" class="form-control" value="${price}" type="number">
         </div>
         <div class="form-group">
-            <label for="low-price">Low Price</label>
-            <input id="low-price" name="low-price" class="form-control" value="${low_price}" type="number">
-        </div>
-        <div class="form-group">
-            <label for="high-price">High Price</label>
-            <input id="high-price" name="high-price" class="form-control" value="${high_price}" type="number">
-        </div>
-        <div class="form-group">
-        <input type="file" name="pic" accept="image/*">
+            <input type="file" name="pic" accept="image/*">
         </div>
         <input type="submit" class="btn btn-primary btn-block" value="Submit">
     </form>

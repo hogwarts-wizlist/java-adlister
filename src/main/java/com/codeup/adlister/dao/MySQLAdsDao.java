@@ -43,18 +43,15 @@ public class MySQLAdsDao implements Ads {
         @Override
         public Long insert (Ad ad) {
             try {
-                String insertQuery = "INSERT INTO ads(user_id, title, description, price, low_price, high_price, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?)";
+                String insertQuery = "INSERT INTO ads(user_id, title, description, price) VALUES (?,?,?,?)";
                 PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
                 stmt.setLong(1, 1);
                 stmt.setString(2, ad.getTitle());
                 stmt.setString(3, ad.getDescription());
                 stmt.setDouble(4, ad.getPrice());
-                stmt.setDouble(5, ad.getLow_price());
-                stmt.setDouble(6, ad.getHigh_price());
-                stmt.setString(7, ad.getCreated_at());
-                stmt.setString(8, ad.getUpdated_at());
                 stmt.executeUpdate();
                 ResultSet rs = stmt.getGeneratedKeys();
+                rs.next();
                 return rs.getLong(1);
             } catch (SQLException e) {
                 throw new RuntimeException("Error creating a new ad.", e);
@@ -67,8 +64,8 @@ public class MySQLAdsDao implements Ads {
                 rs.getString("title"),
                 rs.getString("description"),
                 rs.getDouble("price"),
-                rs.getDouble("low_price"),
-                rs.getDouble("high_price")
+                rs.getString("created_at"),
+                rs.getString("updated_at")
         );
     }
 
