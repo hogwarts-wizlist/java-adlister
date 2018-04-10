@@ -52,11 +52,14 @@ public class MySQLAdsDao implements Ads {
                 stmt.setDouble(4, ad.getPrice());
                 stmt.setDouble(5, ad.getLow_price());
                 stmt.setDouble(6, ad.getHigh_price());
+                stmt.setDate(7, ad. getCreated_at());
+                stmt.setDate(8, ad.getUpdated_at());
+                stmt.executeUpdate();
+                ResultSet rs = stmt.getGeneratedKeys();
+                return rs.getLong(1);
             } catch (SQLException e) {
-                e.printStackTrace();
+                throw new RuntimeException("Error creating a new ad.", e);
             }
-
-
         }
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(

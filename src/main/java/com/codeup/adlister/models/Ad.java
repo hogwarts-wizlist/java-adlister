@@ -1,5 +1,6 @@
 package com.codeup.adlister.models;
 
+import java.sql.Date;
 import java.util.List;
 
 public class Ad {
@@ -114,7 +115,7 @@ public class Ad {
         this.high_price = high_price;
     }
 
-    public String getCreated_at() {
+    public Date getCreated_at() {
         return created_at;
     }
 
@@ -122,7 +123,7 @@ public class Ad {
         this.created_at = created_at;
     }
 
-    public String getUpdated_at() {
+    public Date getUpdated_at() {
         return updated_at;
     }
 
