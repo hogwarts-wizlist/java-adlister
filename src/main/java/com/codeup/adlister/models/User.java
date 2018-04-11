@@ -9,7 +9,7 @@ public class User {
     private String password;
     private String firstname;
     private String lastname;
-    private String biograghy;
+    private String biography;
     private String profile_pic;
     private String created_at;
     private String updated_at;
@@ -22,14 +22,14 @@ public class User {
         setPassword(password);
     }
 
-    public User(long id, String username, String email, String password, String firstname, String lastname, String biograghy, String profile_pic, String created_at, String updated_at) {
+    public User(long id, String username, String email, String password, String firstname, String lastname, String biography, String profile_pic, String created_at, String updated_at) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.biograghy = biograghy;
+        this.biography = biography;
         this.profile_pic = profile_pic;
         this.created_at = created_at;
         this.updated_at = updated_at;
@@ -83,12 +83,12 @@ public class User {
         this.lastname = lastname;
     }
 
-    public String getBiograghy() {
-        return biograghy;
+    public String getbiography() {
+        return biography;
     }
 
-    public void setBiograghy(String biograghy) {
-        this.biograghy = biograghy;
+    public void setbiography(String biography) {
+        this.biography = biography;
     }
 
     public String getProfile_pic() {
