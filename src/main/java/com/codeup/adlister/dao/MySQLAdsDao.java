@@ -31,41 +31,15 @@ public class MySQLAdsDao implements Ads {
         @Override
         public List<Ad> all () {
             java.sql.PreparedStatement stmt = null;
-            PreparedStatement ps = null;
             try {
-                stmt = connection.prepareStatement("SELECT * FROM ads");
+                stmt = connection.prepareStatement("SELECT a.*, u.username FROM ads a JOIN users u ON u.id = a.user_id");
                 ResultSet rs = stmt.executeQuery();
-                rs.getLong(2);
                 return createAdsFromResults(rs);
             } catch (SQLException e) {
+                System.out.println(e.getMessage());
                 throw new RuntimeException("Error retrieving all ads.", e);
             }
         }
-
-    @Override
-    public List<Ad> getAdsByUser(long id) {
-        List<Ad> adsByUser = new ArrayList<>();
-
-        try {
-            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = ?");
-            stmt.setLong(1,id);
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()){
-                adsByUser.add(new Ad(
-                        rs.getLong("id"),
-                        rs.getLong("user_id"),
-                        rs.getString("title"),
-                        rs.getString("description"),
-                        rs.getDouble("price"),
-                        rs.getString("created_at"),
-                        rs.getString("updated_at")
-                ));
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException("this did not work out");
-        }
-        return adsByUser;
-    }
 
     @Override
         public Long insert (Ad ad) {
@@ -87,7 +61,7 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Ad single(String id) {
-        String query = "SELECT * FROM ads WHERE id = ?";
+        String query = "SELECT a.*, u.username FROM ads a JOIN users u ON u.id = a.user_id WHERE a.id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, id);
@@ -96,7 +70,7 @@ public class MySQLAdsDao implements Ads {
             return extractAd(rs);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            throw new RuntimeException("Problem with single ad " , e);
+            throw new RuntimeException("Problem with single ad ", e);
         }
 
     }
@@ -109,7 +83,8 @@ public class MySQLAdsDao implements Ads {
                 rs.getString("description"),
                 rs.getDouble("price"),
                 rs.getString("created_at"),
-                rs.getString("updated_at")
+                rs.getString("updated_at"),
+                rs.getString("username")
         );
     }
 
