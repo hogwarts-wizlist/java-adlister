@@ -8,4 +8,6 @@ public interface Ads {
     List<Ad> all();
     //insert new ad and return id
     Long insert(Ad ad);
+    //find single ad
+    Ad single(String username);
 }
