@@ -20,8 +20,8 @@
             <input id="username" name="username" class="form-control" value="${title}" type="text">
         </div>
         <div class="form-group">
-            <label for="description">Password</label>
-            <input id="description" name="description" class="form-control" type="">
+            <label for="password">Password</label>
+            <input id="password" name="password" class="form-control" type="">
         </div>
         <input type="submit" class="btn btn-primary btn-block" value="Log In">
     </form>
