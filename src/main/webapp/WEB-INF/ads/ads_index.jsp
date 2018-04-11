@@ -17,14 +17,21 @@
     <%@ include file="/stylesheets/navbar.css"%>
     </style>
 </head>
-<body>
+<body class="container">
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+<form class="navbar-form navbar-left">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<div>
 <c:forEach var="ad" items="${ads}">
     <div class="col-md-3">
-
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top" src="../../img/hp-ad.jpg" alt="ad">
             <div class="card-body">
                 <h2 class="card-title">${ad.title}</h2>
                 <p class="card-text">${ad.username}</p>
@@ -34,14 +41,9 @@
                 <a href="/ad?id=${ad.id}" class="card-link">More Details</a>
             </div>
         </div>
-
-
-        <%--<h2>${ad.title}</h2>--%>
-        <%--<p>${ad.username}</p>--%>
-        <%--<p>$${ad.price}</p>--%>
-        <%--<p>${ad.description}</p>--%>
     </div>
 </c:forEach>
+</div>
 
 
 
