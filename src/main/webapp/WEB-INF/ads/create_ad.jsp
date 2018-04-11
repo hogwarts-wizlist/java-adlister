@@ -23,15 +23,15 @@
     <form action="/create" method="POST">
         <div class="form-group">
             <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" value="${title}"type="text">
+            <input id="title" name="title" class="form-control" value="${title}"type="text" required>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <input id="description" name="description" class="form-control" value="${description}" type="textarea">
+            <input id="description" name="description" class="form-control" value="${description}" type="textarea" required>
         </div>
         <div class="form-group">
             <label for="price">Price</label>
-            <input id="price" name="price" class="form-control" value="${price}" type="number">
+            <input id="price" name="price" class="form-control" value="${price}" type="number" required>
         </div>
         <div class="form-group">
             <input type="file" name="pic" accept="image/*">
