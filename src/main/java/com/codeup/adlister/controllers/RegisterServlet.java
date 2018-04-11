@@ -24,12 +24,30 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirm_password");
 
+
         if (username != null && email != null && password != null && password.equals(confirmPassword) && email.contains("@") && email.contains(".")){
             User user = new User(username, email, password);
             DaoFactory.getUsersDao().insert(user);
             request.getSession().setAttribute("user", DaoFactory.getUsersDao().findByUsername(user.getUsername()));
+//            error message will not take place
+            request.getSession().removeAttribute("errorMessage");
             response.sendRedirect("/profile");
         } else {
+
+            System.out.println(username);
+            System.out.println(password);
+//            if username is empty, error message will occur
+            if (username == "") {
+                System.out.println("empty username");
+                request.getSession().setAttribute("errorMessage", "Please enter valid username");
+            }
+//            if password is empty, error message will occur
+            if (password.equals("")) {
+                System.out.println("empty password");
+                request.getSession().setAttribute("errorMessage", "Please enter valid password");
+            }
+
+
             response.sendRedirect("/register");
         }
 
