@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
+import com.codeup.adlister.util.Password;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
 
 
         if (username != null && email != null && password != null && password.equals(confirmPassword) && email.contains("@") && email.contains(".")){
-            User user = new User(username, email, password);
+            User user = new User(username, email, Password.hash(password));
             DaoFactory.getUsersDao().insert(user);
             request.getSession().setAttribute("user", DaoFactory.getUsersDao().findByUsername(user.getUsername()));
 //            error message will not take place
