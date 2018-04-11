@@ -13,13 +13,13 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
-    <h1>Welcome to the Adlister!</h1>
+    <%--<h1>Welcome to the Adlister!</h1>--%>
 
+    <div class="col-md-6">
+        <%--landing page video--%>
+        <iframe src="https://player.vimeo.com/video/264284188?autoplay=1&loop=1&autopause=0" width="600" height="360" frameborder="0"  allowfullscreen></iframe>
 
-    <%--placeholder for movie--%>
-    <iframe width="100%" height="425" src="https://www.youtube.com/embed/JaVEdi3MtPo?
-    autoplay=1&controls=0&showinfo=0&loop=1&rel=0" frameborder="0" allowfullscreen></iframe>
-
+    </div>
 
 
 </div>
