@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
     <style>
         <%@ include file="/stylesheets/navbar.css"%>
+        <%@ include file="/stylesheets/index.css"%>
     </style>
 </head>
 <body>
@@ -15,9 +16,13 @@
 <div class="container">
     <%--<h1>Welcome to the Adlister!</h1>--%>
 
-    <div class="col-md-6">
+    <div class="center">
         <%--landing page video--%>
-        <iframe src="https://player.vimeo.com/video/264284188?autoplay=1&loop=1&autopause=0" width="600" height="360" frameborder="0"  allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/264284188?autoplay=1&loop=1&autopause=0" width="500" height="360" frameborder="0" ></iframe>
+
+            <div>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Browse Ads</a>
+            </div>
 
     </div>
 
