@@ -29,7 +29,7 @@ public class RegisterServlet extends HttpServlet {
         user.setEmail(email);
         user.setPassword(password);
         if (username != null && email != null && password != null && password.equals(confirmPassword) && email.contains("@") && email.contains(".")){
-            user.setId(DaoFactory.getUsersDao().insert(user));
+            DaoFactory.getUsersDao().insert(user);
             request.getSession().setAttribute("user,", user);
             response.sendRedirect("/profile");
         } else {

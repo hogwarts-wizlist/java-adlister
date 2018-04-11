@@ -11,6 +11,12 @@ import java.io.IOException;
 public class ProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        Serve Profile
+        if (request.getSession().getAttribute("user") == null){
+            response.sendRedirect("/login");
+            return;
+        }
+
+
         request.getRequestDispatcher("WEB-INF/profile.jsp").forward(request, response);
     }
 }
