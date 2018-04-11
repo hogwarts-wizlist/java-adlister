@@ -14,9 +14,10 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <%--<c:out value="${ad}"/>--%>
-    <div class="col-md-3">
 
-    <div class="card" style="width: 18rem;">
+<main class="container">
+    <div class="col-md-offset-2 col-md-8">
+    <div class="card" style="width: 18rem; margin-top: 50px">
         <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">
             <h2 class="card-title"><c:out value="${ad.title}"/></h2>
@@ -27,6 +28,8 @@
         <div class="card-body">
             <a href="/ads" class="card-link">Back to Ads</a>
         </div>
+        </div>
     </div>
+</main>
 </body>
 </html>
