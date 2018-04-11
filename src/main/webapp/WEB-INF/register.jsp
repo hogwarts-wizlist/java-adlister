@@ -34,5 +34,6 @@
         <input type="submit" class="btn btn-primary btn-block">
     </form>
 </div>
+<%-- Just to test the push--%>
 </body>
 </html>
