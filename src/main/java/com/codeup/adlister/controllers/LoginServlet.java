@@ -11,6 +11,19 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        Serve Login
+        if(request.getSession().getAttribute("user") != null) {
+            response.sendRedirect("/profile");
+        }
         request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
     }
+
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        User user = DaoFactory.getUsersDao()
+    }
+
+
+
 }
