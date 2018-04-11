@@ -30,7 +30,7 @@
                 <p class="card-text">$${ad.price}</p>
             </div>
             <div class="card-body">
-                <a href="/ad" class="card-link">More Details</a>
+                <a href="/ad?id=${ad.id}" class="card-link">More Details</a>
             </div>
         </div>
 
