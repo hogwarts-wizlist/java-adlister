@@ -15,10 +15,13 @@
 <div class="container">
     <h1>Please Log In</h1>
     <form action="/login" method="POST">
+
+        <%--username field--%>
         <div class="form-group">
             <label for="username">Username</label>
             <input id="username" name="username" class="form-control" type="text">
         </div>
+        <%--password field    --%>
         <div class="form-group">
             <label for="password">Password</label>
             <input id="password" name="password" class="form-control" type="password">
