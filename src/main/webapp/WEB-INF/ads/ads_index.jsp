@@ -27,7 +27,8 @@
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
                 <h2 class="card-title">${ad.title}</h2>
-                <p class="card-text">$${ad.price}</p>
+                <p class="card-text">${ad.username}</p>
+                <p class="card-text">${ad.price}</p>
             </div>
             <div class="card-body">
                 <a href="/ad?id=${ad.id}" class="card-link">More Details</a>

@@ -10,8 +10,21 @@ public class Ad {
     private double price;
     private String created_at;
     private String updated_at;
+    private String username;
+
 
     public Ad() {
+    }
+
+    public Ad(long id, long userId, String title, String description, double price, String created_at, String updated_at, String username) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+        this.username = username;
     }
 
     public Ad(long userId, String title, String description, double price) {
@@ -94,6 +107,14 @@ public class Ad {
 
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
 }
