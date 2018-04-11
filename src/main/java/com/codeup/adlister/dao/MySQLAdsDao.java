@@ -62,20 +62,13 @@ public class MySQLAdsDao implements Ads {
     public Ad single(String id) {
         String query = "SELECT * FROM ads WHERE id = ?";
         try {
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, id);
-            ResultSet rs = ps.executeQuery();
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, id);
+            ResultSet rs = stmt.executeQuery();
             rs.next();
-            return new Ad (
-                    rs.getLong(1),
-                    rs.getLong(2),
-                    rs.getString(3),
-                    rs.getString(4),
-                    rs.getDouble(5),
-                    rs.getString(6),
-                    rs.getString(7)
-            );
+            return extractAd(rs);
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             throw new RuntimeException("Problem with single ad " , e);
         }
 
