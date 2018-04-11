@@ -13,4 +13,13 @@ public class RegisterServlet extends HttpServlet {
 //        Serve Register
         request.getRequestDispatcher("WEB-INF/register.jsp").forward(request, response);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String confirmPassword = request.getParameter("confirm_password");
+
+    }
 }
