@@ -10,6 +10,4 @@ public interface Ads {
     Long insert(Ad ad);
     //find single ad
     Ad single(String username);
-    //link users with ads
-    List<Ad> getAdsByUser(long id);
 }

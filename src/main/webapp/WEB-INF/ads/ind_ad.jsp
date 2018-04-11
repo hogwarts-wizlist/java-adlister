@@ -21,7 +21,7 @@
         <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">
             <h2 class="card-title"><c:out value="${ad.title}"/></h2>
-            <%--<p class="card-text"><c:out value="${ad.username}"/></p>--%>
+            <p class="card-text"><c:out value="${ad.username}"/></p>
             <p class="card-text"><c:out value="${ad.price}"/></p>
             <p class="card-text"><c:out value="${ad.description}"/></p>
         </div>
