@@ -1,3 +1,4 @@
+CREATE DATABASE IF NOT EXISTS wizlist_db;
 USE wizlist_db;
 
 
@@ -18,8 +19,8 @@ CREATE TABLE users(
   last_name VARCHAR(255),
   biography TEXT,
   profile_pic TEXT,
-  created_at DATETIME NOT NULL,
-  updated_at DATETIME NOT NULL,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 );
 

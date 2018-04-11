@@ -36,22 +36,19 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-        String query = "INSERT INTO users(username, email, password, first_name, last_name, biography, profile_pic, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO users(username, email, password) VALUES (?,?,?)";
+        System.out.println(query);
         try {
-            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stmt = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
-            stmt.setString(4, user.getFirstname());
-            stmt.setString(5, user.getLastname());
-            stmt.setString(6, user.getbiography());
-            stmt.setString(7, user.getProfile_pic());
-            stmt.setString(8, user.getCreated_at());
-            stmt.setString(9, user.getUpdated_at());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
             return rs.getLong(1);
         } catch (SQLException e) {
+            System.out.println("e = " + e.getMessage());
             throw new RuntimeException("Help something bad happened!");
         }
 

@@ -19,7 +19,8 @@ public class User {
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
-        setPassword(password);
+        this.password = password;
+//        setPassword(password);
     }
 
     public User(long id, String username, String email, String password, String firstname, String lastname, String biography, String profile_pic, String created_at, String updated_at) {

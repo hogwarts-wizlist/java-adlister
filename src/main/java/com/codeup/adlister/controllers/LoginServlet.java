@@ -17,6 +17,7 @@ public class LoginServlet extends HttpServlet {
 //        Serve Login
         if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
+            return;
         }
         request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
     }
@@ -35,7 +36,8 @@ public class LoginServlet extends HttpServlet {
 
 
 //        password confirmation for user
-        boolean validAttempt = Password.check(password, user.getPassword());
+//        boolean validAttempt = Password.check(password, user.getPassword());
+        boolean validAttempt = password.equals(user.getPassword());
 
 //        if password matches then directed to profile and if not then retry login
         if (validAttempt) {
