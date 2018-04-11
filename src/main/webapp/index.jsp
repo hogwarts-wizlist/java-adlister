@@ -16,12 +16,14 @@
 <div class="container">
     <%--<h1>Welcome to the Adlister!</h1>--%>
 
-    <div class="center">
+    <div>
         <%--landing page video--%>
-        <iframe src="https://player.vimeo.com/video/264284188?autoplay=1&loop=1&autopause=0" width="500" height="360" frameborder="0" ></iframe>
+        <div>
+            <iframe src="https://player.vimeo.com/video/264284188?autoplay=1&loop=1&autopause=0"  height="360" frameborder="0" ></iframe>
+        </div>
 
-            <div>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Browse Ads</a>
+            <div class="center">
+                <a class="btn btn-primary btn-lg" href="/ads" role="button">Browse Ads</a>
             </div>
 
     </div>

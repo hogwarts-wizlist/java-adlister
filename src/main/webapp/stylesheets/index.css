@@ -1,8 +1,18 @@
-/*.center {*/
-    /*margin-left: 30%;*/
+.center {
+    margin-left: 30%;
+}
+
+/*for error message*/
+/*.error {*/
+    /*color: red;*/
 /*}*/
 
 
-.error {
-    color: red;
+
+iframe {
+    pointer-events: none;
+    width: 100%;
+    opacity: .5;
 }
+
+
