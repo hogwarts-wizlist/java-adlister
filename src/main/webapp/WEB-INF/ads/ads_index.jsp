@@ -21,11 +21,24 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <c:forEach var="ad" items="${ads}">
-    <div class="col-md-6">
-        <h2>${ad.title}</h2>
+    <div class="col-md-3">
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <h2 class="card-title">${ad.title}</h2>
+                <p class="card-text">$${ad.price}</p>
+            </div>
+            <div class="card-body">
+                <a href="/ad" class="card-link">More Details</a>
+            </div>
+        </div>
+
+
+        <%--<h2>${ad.title}</h2>--%>
         <%--<p>${ad.username}</p>--%>
-        <p>$${ad.price}</p>
-        <p>${ad.description}</p>
+        <%--<p>$${ad.price}</p>--%>
+        <%--<p>${ad.description}</p>--%>
     </div>
 </c:forEach>
 
