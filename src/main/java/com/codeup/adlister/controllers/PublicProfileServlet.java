@@ -18,6 +18,11 @@ public class PublicProfileServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
+        if (user == null){
+            response.sendRedirect("/login");
+            return;
+        }
+
         String requestedUsername = request.getParameter("username");
         if (!user.getUsername().equals(requestedUsername)){
             User requestedUser = DaoFactory.getUsersDao().findByUsername(requestedUsername);
