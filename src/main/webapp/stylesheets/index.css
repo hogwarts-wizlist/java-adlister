@@ -1,6 +1,8 @@
-/*.center {*/
-    /*margin-left: 30%;*/
-/*}*/
+.error {
+    color:red;
+    font-family: 'Roboto', sans-serif;;
+
+}
 
 fieldset {
     display: inline-block;
