@@ -42,11 +42,11 @@ public class MySQLAdsDao implements Ads {
         }
 
     @Override
-        public Long insert (Ad ad) {
+        public Long insert (Ad ad, long user_id) {
             try {
                 String insertQuery = "INSERT INTO ads(user_id, title, description, price) VALUES (?,?,?,?)";
                 PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-                stmt.setLong(1, 1);
+                stmt.setLong(1, user_id);
                 stmt.setString(2, ad.getTitle());
                 stmt.setString(3, ad.getDescription());
                 stmt.setDouble(4, ad.getPrice());
@@ -58,6 +58,20 @@ public class MySQLAdsDao implements Ads {
                 throw new RuntimeException("Error creating a new ad.", e);
             }
         }
+
+    @Override
+    public List<Ad> adsByUser(long id){
+        String query = "SELECT a.*, u.* FROM ads a JOIN users u ON a.user_id = u.id WHERE u.id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            System.out.println("e.getMessage() = " + e.getMessage());
+            throw new RuntimeException("Couldn't build ad for user", e);
+        }
+    }
 
     @Override
     public Ad single(String id) {
@@ -72,7 +86,6 @@ public class MySQLAdsDao implements Ads {
             System.out.println(e.getMessage());
             throw new RuntimeException("Problem with single ad ", e);
         }
-
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {

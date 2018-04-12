@@ -25,6 +25,9 @@
             <p class="card-text"><c:out value="${ad.username}"/></p>
             <p class="card-text"><c:out value="${ad.price}"/></p>
             <p class="card-text"><c:out value="${ad.description}"/></p>
+            <c:forEach var="cat" items="${ad.categories}">
+                <p class="card-text"><c:out value="${cat.title}"/></p>
+            </c:forEach>
         </div>
         <div class="card-body">
             <a href="/ads" class="card-link">Back to Ads</a>

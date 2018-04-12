@@ -53,34 +53,16 @@
     <%--My Ads--%>
     <div class="row" style="margin: 50px auto">
         <div class="col-md-offset-1 col-md-10">
-            <div class="col-md-3">
-                <img src="#" alt="Ad Picture">
-                <h3><c:out value="${ad.title}"/>ad.title</h3>
-                <p><c:out value="${ad.description}"/>ad.description </p>
-                <h4><c:out value="${ad.created_at}"/>ad.created_at</h4>
-                <a href="#"><button class="btn btn-primary">Edit</button></a>
-            </div>
-            <div class="col-md-3">
-                <img src="#" alt="Ad Picture">
-                <h3><c:out value="${ad.title}"/>ad.title</h3>
-                <p><c:out value="${ad.description}"/>ad.description </p>
-                <h4><c:out value="${ad.created_at}"/>ad.created_at</h4>
-                <a href="#"><button class="btn btn-primary">Edit</button></a>
-            </div>
-            <div class="col-md-3">
-                <img src="#" alt="Ad Picture">
-                <h3><c:out value="${ad.title}"/>ad.title</h3>
-                <p><c:out value="${ad.description}"/>ad.description </p>
-                <h4><c:out value="${ad.created_at}"/>ad.created_at</h4>
-                <a href="#"><button class="btn btn-primary">Edit</button></a>
-            </div>
-            <div class="col-md-3">
-                <img src="#" alt="Ad Picture">
-                <h3><c:out value="${ad.title}"/>ad.title</h3>
-                <p><c:out value="${ad.description}"/>ad.description </p>
-                <h4><c:out value="${ad.created_at}"/>ad.created_at</h4>
-                <a href="#"><button class="btn btn-primary">Edit</button></a>
-            </div>
+            <c:forEach items="${user.ads}" var="ad">
+                <div class="col-md-3">
+                    <img src="#" alt="Ad Picture">
+                    <h3><c:out value="${ad.title}"/></h3>
+                    <p><c:out value="${ad.description}"/></p>
+                    <h4><c:out value="${ad.created_at}"/></h4>
+                    <a href="#"><button class="btn btn-primary">Edit</button></a>
+                </div>
+            </c:forEach>
+
         </div>
     </div>
 </div>
