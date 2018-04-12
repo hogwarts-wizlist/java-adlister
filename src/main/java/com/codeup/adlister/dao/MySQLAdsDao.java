@@ -32,7 +32,7 @@ public class MySQLAdsDao implements Ads {
         public List<Ad> all () {
             java.sql.PreparedStatement stmt = null;
             try {
-                stmt = connection.prepareStatement("SELECT a.*, u.username FROM ads a JOIN users u ON u.id = a.user_id");
+                stmt = connection.prepareStatement("SELECT a.id, u.username, c.title FROM ads a JOIN users u ON a.user_id = u.id JOIN ad_cat ac ON ac.ad_id = a.id JOIN categories c ON ac.cat_id = c.id");
                 ResultSet rs = stmt.executeQuery();
                 return createAdsFromResults(rs);
             } catch (SQLException e) {
@@ -84,7 +84,7 @@ public class MySQLAdsDao implements Ads {
                 rs.getDouble("price"),
                 rs.getString("created_at"),
                 rs.getString("updated_at"),
-                rs.getString("username")
+                rs.getString("username"),
         );
     }
 
