@@ -13,18 +13,20 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="container">
+<div class="container-fluid">
     <div>
         <%--landing page video--%>
         <div class="video-container">
             <iframe class="main-video" src="https://player.vimeo.com/video/264284188?autoplay=1&loop=1&autopause=0" frameborder="0" ></iframe>
         </div>
-            <div class="center">
-                <a class="btn btn-primary btn-lg" href="/ads" role="button">Browse Ads</a>
-            </div>
     </div>
-
-
 </div>
+
+<%--<div class="container">--%>
+            <%--<div class="browse">--%>
+                <%--<a class="btn btn-primary btn-lg" href="/ads" role="button">Browse Ads</a>--%>
+            <%--</div>--%>
+<%--</div>--%>
+
 </body>
 </html>
