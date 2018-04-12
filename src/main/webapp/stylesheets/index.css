@@ -16,7 +16,23 @@ iframe {
 }
 
 
-input {
+input, .card-text, .card-link {
    font-family: 'Roboto', sans-serif;;
+}
+
+
+.side-menu {
+    height: 100%;
+}
+
+.card-format {
+    width: 20rem;
+    margin-bottom: 20px;
+}
+
+
+.search-bar {
+    margin-bottom: 8rem;
+    padding-left: 0;
 }
 
