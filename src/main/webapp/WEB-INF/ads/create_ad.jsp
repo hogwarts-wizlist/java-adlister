@@ -20,7 +20,7 @@
 <%--title, description, price, low_price, high_price, ad_image--%>
 <%--POST request--%>
 
-<div class="form-container">
+<div class="container">
     <h1>Create an Ad:</h1>
     <form action="/create" method="POST">
         <div class="form-group">
