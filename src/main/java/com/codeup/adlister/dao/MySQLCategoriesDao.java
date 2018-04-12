@@ -52,20 +52,18 @@ public class MySQLCategoriesDao implements Categories {
         return categories;
     }
 
-    public List<Category> assignCatsToAd(String id){
-        List<Category> cats = new ArrayList<>();
-        String query = "SELECT a.id, c.title FROM ads a JOIN ad_cat ac ON ac.ad_id = a.id JOIN categories c ON ac.cat_id = c.id WHERE a.id = ?;";
+    public List<Category> assignCatsToAd(long id){
+
+        String query = "SELECT c.* FROM ads a JOIN ad_cat ac ON ac.ad_id = a.id JOIN categories c ON ac.cat_id = c.id WHERE a.id = ?;";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setString(1, id);
+            stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()){
-                cats.add(extractCategory(rs));
-            }
+            return createCatFromResults(rs);
         }catch (SQLException e){
             throw new RuntimeException("failed to add cats to list", e);
         }
-        return cats;
+
 
     }
 

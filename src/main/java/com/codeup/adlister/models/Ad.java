@@ -17,6 +17,17 @@ public class Ad {
     public Ad() {
     }
 
+    public Ad(long id, long userId, String title, String description, double price, String created_at, String updated_at, String username) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+        this.username = username;
+    }
+
     public Ad(long id, long userId, String title, String description, double price, String created_at, String updated_at, String username, List<Category> categories) {
         this.id = id;
         this.userId = userId;
