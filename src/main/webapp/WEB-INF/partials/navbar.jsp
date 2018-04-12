@@ -10,6 +10,7 @@
         </div>
 
 
+        <%--dynamic navbar--%>
         <c:choose>
             <c:when test="${sessionScope.user != null}">
                 <ul class="nav navbar-nav navbar-right">
@@ -28,18 +29,7 @@
             </c:otherwise>
         </c:choose>
 
-        <%----%>
-        <%--<ul class="nav navbar-nav navbar-left">--%>
-            <%--<li><a href="/ads">View Ads</a></li>--%>
-            <%--<li><a href="/profile">Profile</a></li>--%>
-            <%--<li><a href="/create">Create</a></li>--%>
-        <%--</ul>--%>
-        <%--<ul class="nav navbar-nav navbar-right">--%>
-            <%--<li><a href="/register">Register</a></li>--%>
-            <%--<li><a href="/login">Login</a></li>--%>
-            <%--<li><a href="/logout">Logout</a></li>--%>
-        <%--</ul>--%>
-    </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+    </div>
+    </div>
 </nav>
 
