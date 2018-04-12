@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
     <style>
     <%@ include file="/stylesheets/navbar.css"%>
+    <%@ include file="/stylesheets/index.css"%>
+
     </style>
 </head>
 <body>
