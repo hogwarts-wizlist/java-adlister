@@ -31,7 +31,7 @@
 <c:forEach var="ad" items="${ads}">
     <div class="col-md-3">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../../img/hp-ad.jpg" alt="ad">
+            <img class="card-img-top" src=".." alt="ad">
             <div class="card-body">
                 <h2 class="card-title">${ad.title}</h2>
                 <p class="card-text">${ad.username}</p>
