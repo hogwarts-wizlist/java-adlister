@@ -17,18 +17,20 @@
 <div class="container">
     <h1>Please fill in your information</h1>
     <form action="/register" method="post">
-        <%--<div class="error">${errorMessage}</div>--%>
+        <c:if test="${errorMessage != ''}">
+        <div class="error">${errorMessage}</div>
+        </c:if>
         <div class="form-group">
             <label for="username">Username</label>
-            <input id="username" name="username" class="form-control" type="text">
+            <input id="username" name="username" class="form-control" type="text" value="${username}">
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" name="email" class="form-control" type="text">
+            <input id="email" name="email" class="form-control" type="text" value="${email}">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input id="password" name="password" class="form-control" type="password">
+            <input id="password" name="password" class="form-control" type="password" value="${password}">
         </div>
         <div class="form-group">
             <label for="confirm_password">Confirm Password</label>
@@ -37,6 +39,5 @@
         <input type="submit" class="btn btn-primary btn-block">
     </form>
 </div>
-<%-- Just to test the push--%>
 </body>
 </html>
