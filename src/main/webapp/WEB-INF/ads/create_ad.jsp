@@ -35,9 +35,10 @@
             <label for="price">Price</label>
             <input id="price" name="price" class="form-control" value="${price}" type="number">
         </div>
-        <div class="form-group">
-            <input type="file" name="pic" accept="image/*">
-        </div>
+        <%--form for image; doesn't upload--%>
+        <%--<div class="form-group">--%>
+            <%--<input type="file" name="pic" accept="image/*">--%>
+        <%--</div>--%>
         <input type="submit" class="btn btn-primary btn-block" value="Submit">
     </form>
 </div>
