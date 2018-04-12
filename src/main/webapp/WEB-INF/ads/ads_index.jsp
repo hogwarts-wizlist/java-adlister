@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: BettinaTrejo
-  Date: 4/9/18
-  Time: 4:13 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -13,8 +7,10 @@
         <jsp:param name="title" value="WizList" />
     </jsp:include>
     <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <style>
-    <%@ include file="/stylesheets/navbar.css"%>
+        <%@ include file="/stylesheets/navbar.css"%>
+        <%@ include file="/stylesheets/index.css"%>
     </style>
 </head>
 <body class="container">

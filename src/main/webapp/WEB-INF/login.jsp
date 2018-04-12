@@ -6,8 +6,10 @@
         <jsp:param name="title" value="WizList" />
     </jsp:include>
     <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <style>
         <%@ include file="/stylesheets/navbar.css"%>
+        <%@ include file="/stylesheets/index.css"%>
     </style>
 </head>
 <body>
