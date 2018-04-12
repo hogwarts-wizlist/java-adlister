@@ -8,11 +8,46 @@
 /*}*/
 
 
-
-iframe {
-    pointer-events: none;
+.video-container {
+    height: 100vh;
     width: 100%;
-    opacity: .5;
+    display: inline;
+
+}
+
+.main-video {
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
 }
 
 
+iframe {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+
+
+}
+
+
+input, .card-text, .card-link {
+   font-family: 'Roboto', sans-serif;;
+}
+
+
+.side-menu {
+    height: 100%;
+}
+
+.card-format {
+    width: 20rem;
+    margin-bottom: 20px;
+}
+
+
+.search-bar {
+    margin-bottom: 8rem;
+    padding-left: 0;
+}

@@ -8,8 +8,10 @@
         <jsp:param name="title" value="WizList" />
     </jsp:include>
     <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <style>
         <%@ include file="/stylesheets/navbar.css"%>
+        <%@ include file="/stylesheets/index.css"%>
     </style>
 </head>
 <body>
@@ -18,7 +20,7 @@
 <%--title, description, price, low_price, high_price, ad_image--%>
 <%--POST request--%>
 
-<div class="form-container">
+<div class="container">
     <h1>Create an Ad:</h1>
     <form action="/create" method="POST">
         <div class="form-group">
