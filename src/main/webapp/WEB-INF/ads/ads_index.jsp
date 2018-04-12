@@ -86,7 +86,7 @@
             <div class="card-body">
                 <h4 class="card-title">${ad.title} <a class="btn btn-lg" href="/index.jsp" role="button">&#9889;</a></h4>
                 <p class="card-text">$${ad.price}</p>
-                <p class="card-text username">${ad.username}</p>
+                <p class="card-text username"><a href="/publicprofile?username=${ad.username}">${ad.username}</a></p>
             </div>
             <div class="card-body">
                 <a href="/ad?id=${ad.id}" class="card-link">More Details</a>
