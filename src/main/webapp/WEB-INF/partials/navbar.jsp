@@ -8,16 +8,37 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/index">WizList</a>
         </div>
-        <ul class="nav navbar-nav navbar-left">
-            <li><a href="/ads">View Ads</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/create">Create</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/register">Register</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/logout">Logout</a></li>
-        </ul>
+
+
+        <c:choose>
+            <c:when test="${sessionScope.user != null}">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/ads">View Ads</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/create">Create</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </c:when>
+            <c:otherwise>
+             <ul class="nav navbar-nav navbar-right">
+                <li><a href="/ads">View Ads</a></li>
+                 <li><a href="/register">Register</a></li>
+                 <li><a href="/login">Login</a></li>
+             </ul>
+            </c:otherwise>
+        </c:choose>
+
+        <%----%>
+        <%--<ul class="nav navbar-nav navbar-left">--%>
+            <%--<li><a href="/ads">View Ads</a></li>--%>
+            <%--<li><a href="/profile">Profile</a></li>--%>
+            <%--<li><a href="/create">Create</a></li>--%>
+        <%--</ul>--%>
+        <%--<ul class="nav navbar-nav navbar-right">--%>
+            <%--<li><a href="/register">Register</a></li>--%>
+            <%--<li><a href="/login">Login</a></li>--%>
+            <%--<li><a href="/logout">Logout</a></li>--%>
+        <%--</ul>--%>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
