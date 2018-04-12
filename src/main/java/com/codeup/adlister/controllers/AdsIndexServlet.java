@@ -16,22 +16,13 @@ import java.util.List;
 @WebServlet(name = "AdsIndexServlet" , urlPatterns = "/ads")
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        for (Ad a : DaoFactory.getAdsDao().all()){
+        List<Ad> ads = DaoFactory.getAdsDao().all();
+        for (Ad a : ads){
             List<Category> cats = DaoFactory.getCategoriesDao().assignCatsToAd(a.getId());
-//            for (Category c : cats){
-//                System.out.println("c.getTitle() = " + c.getTitle());
-//            }
             a.setCategories(cats);
         }
-
-        for (Ad a : DaoFactory.getAdsDao().all()){
-//            List<Category> cats = DaoFactory.getCategoriesDao().assignCatsToAd(a.getId());
-            for (Category c : a.getCategories()){
-                System.out.println("c.getTitle() = " + c.getTitle());
-            }
-        }
 //        Show all ads
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        request.setAttribute("ads", ads);
 //  Adding some text
 //        Serve the adsindex.jsp
         request.getRequestDispatcher("WEB-INF/ads/ads_index.jsp").forward(request, response);

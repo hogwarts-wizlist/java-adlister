@@ -88,10 +88,6 @@ public class MySQLAdsDao implements Ads {
         );
     }
 
-    private Ad extractAdWithCat(ResultSet rs) throws SQLException {
-        return null;
-    }
-
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
         List<Ad> ads = new ArrayList<>();
         while (rs.next()) {
