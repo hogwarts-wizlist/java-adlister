@@ -11,6 +11,7 @@ public class Ad {
     private String created_at;
     private String updated_at;
     private String username;
+    private List<Category> categories;
 
 
     public Ad() {
@@ -25,6 +26,18 @@ public class Ad {
         this.created_at = created_at;
         this.updated_at = updated_at;
         this.username = username;
+    }
+
+    public Ad(long id, long userId, String title, String description, double price, String created_at, String updated_at, String username, List<Category> categories) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+        this.username = username;
+        this.categories = categories;
     }
 
     public Ad(long userId, String title, String description, double price) {
@@ -117,4 +130,11 @@ public class Ad {
         this.username = username;
     }
 
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
 }

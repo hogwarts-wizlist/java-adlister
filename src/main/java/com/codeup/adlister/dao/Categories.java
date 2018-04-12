@@ -7,4 +7,5 @@ import java.util.List;
 public interface Categories {
     //get list of all categories
     List<Category> all();
+    List<Category> assignCatsToAd(long id);
 }
