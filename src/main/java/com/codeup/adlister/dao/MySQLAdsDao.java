@@ -59,12 +59,28 @@ public class MySQLAdsDao implements Ads {
             }
         }
 
+
+
     @Override
     public List<Ad> adsByUser(long id){
         String query = "SELECT a.*, u.* FROM ads a JOIN users u ON a.user_id = u.id WHERE u.id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            System.out.println("e.getMessage() = " + e.getMessage());
+            throw new RuntimeException("Couldn't build ad for user", e);
+        }
+    }
+
+    @Override
+    public List<Ad> adBySearch(String search) {
+        String query = "SELECT a.*, u.username FROM ads a JOIN users u ON a.user_id = u.id WHERE title LIKE ?;";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, '%' + search + '%');
             ResultSet rs = ps.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -87,6 +103,8 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Problem with single ad ", e);
         }
     }
+
+
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
