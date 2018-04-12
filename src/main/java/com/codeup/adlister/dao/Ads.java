@@ -12,4 +12,6 @@ public interface Ads {
     Ad single(String username);
 //    user individual ads
     List<Ad> adsByUser(long id);
+//    Ad by search query
+    List<Ad> adBySearch(String search);
 }

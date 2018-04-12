@@ -19,9 +19,9 @@
 <div class="col-md-4 side-menu">
     <%--search menu for ads--%>
     <div class="search-bar">
-        <form class="search-bar navbar-form navbar-left">
+        <form method="get" action="/search" class="search-bar navbar-form navbar-left">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" name="search" placeholder="Search">
             </div>
             <button type="submit" class="btn btn-default">Search</button>
         </form>
