@@ -1,10 +1,19 @@
-.center {
-    margin-left: 30%;
-}
+/*.center {*/
+    /*margin-left: 30%;*/
+/*}*/
 
 fieldset {
     display: inline-block;
 }
+
+/*css for button*/
+/*.browse {*/
+    /*display: inline;*/
+    /*!*position: absolute;*!*/
+    /*margin: 50%;*/
+
+/*}*/
+
 
 legend {
     color: white;
