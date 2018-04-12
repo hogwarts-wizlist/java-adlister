@@ -23,15 +23,26 @@ public class LoginServlet extends HttpServlet {
     }
 
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
+        request.setAttribute("username", username);
+        request.setAttribute("password", password);
+
         User user = DaoFactory.getUsersDao().findByUsername(username);
+        //            error message will not take place
 
 //        if field is empty then attempt login again
         if (user == null) {
             response.sendRedirect("/login");
+//            if username is empty, error message will occur
+            if (username.equals("")) {
+                request.getSession().setAttribute("errorMessage", "*Please enter valid username");
+            }
             return;
+        } else {
+            request.getSession().removeAttribute("errorMessage");
         }
 
 
@@ -42,9 +53,17 @@ public class LoginServlet extends HttpServlet {
 //        if password matches then directed to profile and if not then retry login
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
+            request.getSession().removeAttribute("errorMessage");
             response.sendRedirect("/profile");
         } else {
-            response.sendRedirect("/login");
+
+//            if password is empty, error message will occur
+            if (password.equals("")) {
+                request.getSession().setAttribute("errorMessage", "*Please enter valid password");
+            }
+
+            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+
         }
 
 
