@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
     <style>
     <%@ include file="/stylesheets/navbar.css"%>
+    <%@ include file="/stylesheets/index.css"%>
     </style>
 </head>
 <body>
@@ -16,8 +17,8 @@
 <%--<c:out value="${ad}"/>--%>
 
 <main class="container">
-    <div class="col-md-offset-2 col-md-8">
-    <div class="card" style="width: 18rem; margin-top: 50px">
+    <div class="col-md-6">
+    <div class="card">
         <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">
             <h2 class="card-title"><c:out value="${ad.title}"/></h2>

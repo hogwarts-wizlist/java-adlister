@@ -3,11 +3,13 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="WizList" />
+        <jsp:param name="title" value="${user.username}" />
     </jsp:include>
     <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
     <style>
     <%@ include file="/stylesheets/navbar.css"%>
+    <%@ include file="/stylesheets/index.css"%>
+
     </style>
 </head>
 <body>
@@ -16,11 +18,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h2>Welcome <c:out value="${user.username}"/>user.username</h2>
+            <h2>Welcome <c:out value="${user.username}"/></h2>
             <img src="${user.profile_pic}" alt="Profile picture">
             <ul class="list-unstyled">
-                <li>My email: <c:out value="${user.email}"/>user.email</li>
-                <li>Member since: <c:out value="${user.created_at}"/>user.created_at</li>
+                <li>My email: <c:out value="${user.email}"/></li>
+                <li>Member since: <c:out value="${user.created_at}"/></li>
             </ul>
         </div>
     </div>
@@ -40,10 +42,10 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="col-md-3">
                 <img src="#" alt="Ad Picture">
-                <h3><c:out value="${ad.title}"/>ad.title</h3>
-                <p><c:out value="${ad.description}"/>ad.description </p>
-                <h4><c:out value="${ad.created_at}"/>ad.created_at</h4>
-                <a href="#"><button class="btn btn-danger">unfave</button></a>
+                <h3><c:out value="${ad.title}"/></h3>
+                <p><c:out value="${ad.description}"/></p>
+                <h4><c:out value="${ad.created_at}"/></h4>
+                <a href="#"><button class="btn btn-danger">Delete</button></a>
             </div>
         </div>
     </div>

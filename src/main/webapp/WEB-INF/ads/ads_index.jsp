@@ -28,19 +28,50 @@
     </div>
     <%--category list--%>
     <div>
-        <h3>Categories:</h3>
-        <ul>
-            <li><a href="#">Wands</a></li>
-            <li><a href="#">Potions</a></li>
-            <li><a href="#">Creatures</a></li>
-            <li><a href="#">Robes</a></li>
-            <li><a href="#">Brooms</a></li>
-            <li><a href="#">Subscriptions</a></li>
-            <li><a href="#">Spells</a></li>
-            <li><a href="#">Misc</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Books</a></li>
-        </ul>
+
+        <fieldset>
+            <legend>Categories:</legend>
+            <div>
+                <input type="checkbox" id="wands" name="category" value="wands">
+                <label for="wands">Wands</label>
+            </div>
+            <div>
+                <input type="checkbox" id="potions" name="category" value="potions">
+                <label for="potions">Potions</label>
+            </div>
+            <div>
+                <input type="checkbox" id="creatures" name="category" value="creatures">
+                <label for="creatures">Creatures</label>
+            </div>
+            <div>
+                <input type="checkbox" id="robes" name="category" value="robes">
+                <label for="robes">Robes</label>
+            </div>
+            <div>
+                <input type="checkbox" id="brooms" name="category" value="brooms">
+                <label for="brooms">Brooms</label>
+            </div>
+            <div>
+                <input type="checkbox" id="subscriptions" name="category" value="subscriptions">
+                <label for="subscriptions">Subscriptions</label>
+            </div>
+            <div>
+                <input type="checkbox" id="spells" name="category" value="spells">
+                <label for="spells">Spells</label>
+            </div>
+            <div>
+                <input type="checkbox" id="misc" name="category" value="misc">
+                <label for="misc">Misc</label>
+            </div>
+            <div>
+                <input type="checkbox" id="services" name="category" value="services">
+                <label for="services">Services</label>
+            </div>
+            <div>
+                <input type="checkbox" id="books" name="category" value="books">
+                <label for="books">Books</label>
+            </div>
+        </fieldset>
     </div>
 </div>
 
@@ -55,7 +86,7 @@
             <div class="card-body">
                 <h4 class="card-title">${ad.title} <a class="btn btn-lg" href="/index.jsp" role="button">&#9889;</a></h4>
                 <p class="card-text">$${ad.price}</p>
-                <p class="card-text username">${ad.username}</p>
+                <p class="card-text username"><a href="/publicprofile?username=${ad.username}">${ad.username}</a></p>
             </div>
             <div class="card-body">
                 <a href="/ad?id=${ad.id}" class="card-link">More Details</a>
