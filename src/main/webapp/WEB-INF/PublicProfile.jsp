@@ -8,10 +8,12 @@
     <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
     <style>
         <%@ include file="/stylesheets/navbar.css"%>
+        <%@ include file="/stylesheets/index.css"%>
     </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
 
 <div class="container">
     <h1>This profile belongs to this <c:out value="${user.username}"/></h1>
@@ -23,13 +25,14 @@
 
 
     <c:choose>
-        <c:when test="${empty ads}">
+        <c:when test="${empty user.ads}">
             <h2><c:out value="${user.username}"/> doesn't have any ads</h2>
         </c:when>
         <c:otherwise>
-            <c:forEach items="ads" var="ad">
+            <c:forEach items="${user.ads}" var="ad">
                 <h3><c:out value="${ad.title}"/></h3>
                 <p><c:out value="${ad.description}"/></p>
+                <p><c:out value="${ad.price}"/></p>
             </c:forEach>
         </c:otherwise>
     </c:choose>

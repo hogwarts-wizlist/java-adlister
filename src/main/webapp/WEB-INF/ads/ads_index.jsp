@@ -88,7 +88,7 @@
                 <p class="card-text">$${ad.price}</p>
                 <p class="card-text username"><a href="/publicprofile?username=${ad.username}">${ad.username}</a></p>
                 <c:forEach items="${ad.categories}" var="cat">
-                    <li>${cat.title}</li>
+                    <p>${cat.title}</p>
                 </c:forEach>
             </div>
             <div class="card-body">
