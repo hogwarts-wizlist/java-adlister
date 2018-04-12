@@ -1,6 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "PublicProfileServlet", urlPatterns = "/publicprofile")
 public class PublicProfileServlet extends HttpServlet {
@@ -26,6 +28,8 @@ public class PublicProfileServlet extends HttpServlet {
         String requestedUsername = request.getParameter("username");
         if (!user.getUsername().equals(requestedUsername)){
             User requestedUser = DaoFactory.getUsersDao().findByUsername(requestedUsername);
+            List<Ad> ads = DaoFactory.getAdsDao().adsByUser(requestedUser.getId());
+            requestedUser.setAds(ads);
             request.setAttribute("user", requestedUser);
             request.getRequestDispatcher("WEB-INF/PublicProfile.jsp").forward(request, response);
         } else {

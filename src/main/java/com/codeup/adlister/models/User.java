@@ -2,6 +2,8 @@ package com.codeup.adlister.models;
 
 import com.codeup.adlister.util.Password;
 
+import java.util.List;
+
 public class User {
     private long id;
     private String username;
@@ -13,6 +15,32 @@ public class User {
     private String profile_pic;
     private String created_at;
     private String updated_at;
+
+
+
+    public List<Ad> getAds() {
+        return ads;
+    }
+
+    public void setAds(List<Ad> ads) {
+        this.ads = ads;
+    }
+
+    private List<Ad> ads;
+
+    public User(long id, String username, String email, String password, String firstname, String lastname, String biography, String profile_pic, String created_at, String updated_at, List<Ad> ads) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.biography = biography;
+        this.profile_pic = profile_pic;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+        this.ads = ads;
+    }
 
     public User() {}
 
@@ -114,5 +142,13 @@ public class User {
 
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
     }
 }
