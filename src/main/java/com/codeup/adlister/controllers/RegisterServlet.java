@@ -20,39 +20,46 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirm_password");
 
+        request.setAttribute("username", username);
+        request.setAttribute("email", email);
+        request.setAttribute("password", password);
 
         if (username != null && email != null && password != null && password.equals(confirmPassword) && email.contains("@") && email.contains(".")){
             User user = new User(username, email, Password.hash(password));
             DaoFactory.getUsersDao().insert(user);
             request.getSession().setAttribute("user", DaoFactory.getUsersDao().findByUsername(user.getUsername()));
 //            error message will not take place
-//            request.getSession().removeAttribute("errorMessage");
+            request.getSession().removeAttribute("errorMessage");
             response.sendRedirect("/profile");
         } else {
 
 //            if username is empty, error message will occur
-//            if (username.equals("")) {
-//                System.out.println("empty username");
-//                request.getSession().setAttribute("errorMessage", "*Please enter valid username");
-//            }
+            if (username.equals("")) {
+                request.getSession().setAttribute("errorMessage", "*Please enter valid username");
+            }
 //            if password is empty, error message will occur
-//            if (password.equals("")) {
-//                System.out.println("empty password");
-//                request.getSession().setAttribute("errorMessage", "*Please enter valid password");
-//            }
-//
-//            if (email.equals("")) {
-//                System.out.println("empty password");
-//                request.getSession().setAttribute("errorMessage", "*Please enter valid email");
-//            }
+            if (password.equals("")) {
+                request.getSession().setAttribute("errorMessage", "*Please enter valid password");
+            }
+
+            if (email.equals("")) {
+                request.getSession().setAttribute("errorMessage", "*Please enter valid email");
+            }
+
+            if (confirmPassword.equals("")) {
+                request.getSession().setAttribute("errorMessage", "*Please confirm password");
+            }
 
 
-            response.sendRedirect("/register");
+//            response.sendRedirect("/register");
+            request.getRequestDispatcher("WEB-INF/register.jsp").forward(request, response);
+
         }
 
     }
