@@ -76,13 +76,13 @@
 </div>
 
 <%--placeholder image--%>
-            <%--<img src="../../img/hp_ad.jpg">--%>
 
 <%--each ad--%>
 <div class="col-md-offset-4">
 <c:forEach var="ad" items="${ads}">
     <div class="col-md-5">
         <div class="card card-format">
+            <img src="https://commons.wikimedia.org/wiki/File:HP_-_Harry_Potter_wordmark.svg">
             <div class="card-body">
                 <h4 class="card-title">${ad.title} <a class="btn btn-lg" href="/index.jsp" role="button">&#9889;</a></h4>
                 <p class="card-text">$${ad.price}</p>
