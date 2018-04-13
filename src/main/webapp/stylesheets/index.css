@@ -60,7 +60,6 @@ input, .card-text, .card-link {
 }
 
 .ad {
-    background-color: white;
     margin-top: 3%;
 }
 
@@ -73,6 +72,23 @@ input, .card-text, .card-link {
     background-color: #656565;
     color: #ffffff;
 }
+
+
+
+
+.side-menu-public {
+    height: 100vh;
+}
+
+.side-menu-public {
+    height: 100vh;
+    background-color: #0c2603;
+    color: #ffffff;
+}
+
+
+
+
 
 .profile-content {
     margin-left: 25px;
