@@ -35,6 +35,11 @@
             <label for="email">Email</label>
             <input id="email" name="email" class="form-control" type="text" value="${email}">
         </div>
+        <div class="form-group">
+            <label for="profilePic">Profile Pic url</label>
+            <input id="profilePic" name="url" class="form-control" type="text">
+        </div>
+
         <input type="submit" class="btn btn-primary btn-block">
     </form>
 </div>
