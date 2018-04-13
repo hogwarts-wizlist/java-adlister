@@ -1,6 +1,6 @@
-/*.center {*/
-    /*margin-left: 30%;*/
-/*}*/
+.center {
+    margin-left: 18%;
+}
 
 
 .error {
@@ -57,9 +57,23 @@ input, .card-text, .card-link {
    font-family: 'Roboto', sans-serif;
 }
 
+.ad {
+    background-color: white;
+    margin-top: 3%;
+}
 
 .side-menu {
     height: 100vh;
+}
+
+.side-menu-profile {
+    height: 100vh;
+    background-color: #656565;
+    color: #ffffff;
+}
+
+.profile-content {
+    margin-left: 25px;
 }
 
 .card-format {
