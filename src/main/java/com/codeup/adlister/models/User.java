@@ -44,11 +44,11 @@ public class User {
 
     public User() {}
 
-    public User(String username, String email, String password) {
+    public User(String username, String email, String password, String profile_pic) {
         this.username = username;
         this.email = email;
         this.password = password;
-//        setPassword(password);
+        this.profile_pic = profile_pic;
     }
 
     public User(long id, String username, String email, String password, String firstname, String lastname, String biography, String profile_pic, String created_at, String updated_at) {

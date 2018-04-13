@@ -21,7 +21,7 @@
             <h2>Welcome, <c:out value="${user.username}"/>!</h2>
             <%--<img src="${user.profile_pic}" alt="Profile picture">--%>
             <div style="width: 200px; height: 200px; margin-bottom: 20px;">
-                <img src="https://avatarfiles.alphacoders.com/121/121391.jpg" alt="Profile picture" width="100%" class="rounded-image">
+                <img src="${user.profile_pic}" alt="Profile picture" width="100%" class="rounded-image">
             </div>
 
             <ul class="list-unstyled">
