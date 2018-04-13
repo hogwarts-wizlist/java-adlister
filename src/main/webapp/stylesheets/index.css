@@ -1,5 +1,5 @@
 .center {
-    margin-left: 18%;
+    margin-left: 16%;
 }
 
 
@@ -10,7 +10,7 @@
 
 fieldset {
     display: inline-block;
-    color: #dbcf0d;
+    color: #e2c20f;
     font-size: 20px;
 }
 
@@ -60,12 +60,9 @@ input, .card-text, .card-link {
 }
 
 .ad {
-    margin-top: 3%;
+    margin-top: 4%;
 }
 
-.side-menu {
-    height: 100vh;
-}
 
 .side-menu-profile {
     height: 100vh;
@@ -74,19 +71,11 @@ input, .card-text, .card-link {
 }
 
 
-
-
 .side-menu-public {
     height: 100vh;
-}
-
-.side-menu-public {
-    height: 100vh;
-    background-color: #0c2603;
+    background-color: #0a1f02;
     color: #ffffff;
 }
-
-
 
 
 
