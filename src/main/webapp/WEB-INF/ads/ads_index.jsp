@@ -82,9 +82,11 @@
 <c:forEach var="ad" items="${ads}">
     <div class="col-md-5">
         <div class="card card-format">
-            <img src="https://commons.wikimedia.org/wiki/File:HP_-_Harry_Potter_wordmark.svg">
+            <div style="width: 100px; height: 100px;">
+                <img src="https://s8.favim.com/orig/72/lt3-lt3-hp-lt3-always-harry-potter-Favim.com-724166.jpg" alt="ad picture" width="100%">
+            </div>
             <div class="card-body">
-                <h4 class="card-title">${ad.title} <a class="btn btn-lg" href="/index.jsp" role="button">&#9889;</a></h4>
+                <h4 class="card-title">${ad.title}</h4>
                 <p class="card-text">$${ad.price}</p>
                 <p class="card-text username"><a href="/publicprofile?username=${ad.username}">${ad.username}</a></p>
                 <c:forEach items="${ad.categories}" var="cat">
