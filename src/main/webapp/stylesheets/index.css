@@ -1,6 +1,6 @@
-/*.center {*/
-    /*margin-left: 30%;*/
-/*}*/
+.center {
+    margin-left: 18%;
+}
 
 
 .error {
@@ -10,6 +10,8 @@
 
 fieldset {
     display: inline-block;
+    color: #dbcf0d;
+    font-size: 20px;
 }
 
 
@@ -57,9 +59,39 @@ input, .card-text, .card-link {
    font-family: 'Roboto', sans-serif;
 }
 
+.ad {
+    margin-top: 3%;
+}
 
 .side-menu {
     height: 100vh;
+}
+
+.side-menu-profile {
+    height: 100vh;
+    background-color: #656565;
+    color: #ffffff;
+}
+
+
+
+
+.side-menu-public {
+    height: 100vh;
+}
+
+.side-menu-public {
+    height: 100vh;
+    background-color: #0c2603;
+    color: #ffffff;
+}
+
+
+
+
+
+.profile-content {
+    margin-left: 25px;
 }
 
 .card-format {

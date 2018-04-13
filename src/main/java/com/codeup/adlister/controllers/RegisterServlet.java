@@ -25,13 +25,19 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirm_password");
+        String url = request.getParameter("url");
+        if ((url.equals("")) || (url == null)) {
+            url = "https://avatarfiles.alphacoders.com/121/121391.jpg";
+        }
+
 
         request.setAttribute("username", username);
         request.setAttribute("email", email);
         request.setAttribute("password", password);
+        request.setAttribute("url", url);
 
         if (username != null && email != null && password != null && password.equals(confirmPassword) && email.contains("@") && email.contains(".")){
-            User user = new User(username, email, Password.hash(password));
+            User user = new User(username, email, Password.hash(password), url);
             DaoFactory.getUsersDao().insert(user);
             request.getSession().setAttribute("user", DaoFactory.getUsersDao().findByUsername(user.getUsername()));
 //            error message will not take place
