@@ -14,4 +14,6 @@ public interface Ads {
     List<Ad> adsByUser(long id);
 //    Ad by search query
     List<Ad> adBySearch(String search);
+//    delete ad
+    void deleteAd(Ad ad);
 }
