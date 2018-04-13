@@ -3,6 +3,7 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.Config;
 import com.codeup.adlister.models.Category;
 import com.mysql.cj.jdbc.Driver;
+import org.omg.SendingContext.RunTime;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -24,6 +25,10 @@ public class MySQLCategoriesDao implements Categories {
         }
 
     }
+
+//    public Category buildCategory(long cat_id){
+//        return new Category( cat_id, );
+//    }
 
     @Override
     public List<Category> all() {
@@ -65,6 +70,22 @@ public class MySQLCategoriesDao implements Categories {
         }
 
 
+    }
+
+    @Override
+    public void insert(long ad_id, long cat_id) {
+        String query ="INSERT INTO ad_cat(ad_id, cat_id) VALUES(?,?);";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            ps.setLong(1, ad_id);
+            ps.setLong(2, cat_id);
+            ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            rs.next();
+        } catch (SQLException e) {
+            System.out.println("e.getMessage() = " + e.getMessage());
+            throw new RuntimeException("error adding category to ad_cat", e);
+        }
     }
 
 }
