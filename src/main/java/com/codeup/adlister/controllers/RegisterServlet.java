@@ -48,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
                 request.getSession().setAttribute("errorMessage", "*Please enter valid password");
             }
 
-            if (email.equals("")) {
+            if (email.equals("") || !email.contains("@")) {
                 request.getSession().setAttribute("errorMessage", "*Please enter valid email");
             }
 
@@ -56,8 +56,11 @@ public class RegisterServlet extends HttpServlet {
                 request.getSession().setAttribute("errorMessage", "*Please confirm password");
             }
 
+            if(!password.equals(confirmPassword)) {
+                request.getSession().setAttribute("errorMessage", "*Password does not match");
 
-//            response.sendRedirect("/register");
+            }
+
             request.getRequestDispatcher("WEB-INF/register.jsp").forward(request, response);
 
         }
