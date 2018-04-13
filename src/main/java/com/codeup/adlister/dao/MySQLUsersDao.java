@@ -37,13 +37,13 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-        String query = "INSERT INTO users(username, email, password) VALUES (?,?,?)";
-        System.out.println(query);
+        String query = "INSERT INTO users(username, email, password, profile_pic) VALUES (?,?,?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
+            stmt.setString(4, user.getProfile_pic());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -58,10 +58,11 @@ public class MySQLUsersDao implements Users {
     @Override
     public void update(User user){
         try {
-        PreparedStatement stmt = connection.prepareStatement("UPDATE users SET username=?,email=? WHERE id = ?");
+        PreparedStatement stmt = connection.prepareStatement("UPDATE users SET username=?,email=?, profile_pic=? WHERE id = ?");
         stmt.setString(1, user.getUsername());
         stmt.setString(2, user.getEmail());
-        stmt.setLong(3, user.getId());
+        stmt.setString(3, user.getProfile_pic());
+        stmt.setLong(4, user.getId());
         stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error updating user info");

@@ -20,10 +20,15 @@ public class UpdateUserServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
         String username = request.getParameter("username");
         String email = request.getParameter("email");
+        String url = request.getParameter("url");
+        if (url == null){
+            url = "https://avatarfiles.alphacoders.com/121/121391.jpg";
+        }
 
         if (email.contains("@") || email.contains(".") || !email.isEmpty()) {
             user.setUsername(username);
             user.setEmail(email);
+            user.setProfile_pic(url);
             DaoFactory.getUsersDao().update(user);
             response.sendRedirect("/profile");
             return;
