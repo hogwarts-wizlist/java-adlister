@@ -41,43 +41,43 @@
             <h4>Categories:</h4>
             <div class="col-md-2">
                 <div>
-                    <input type="checkbox" id="wands" name="category" value="wands">
+                    <input type="checkbox" id="wands" name="c1" value="1">
                     <label for="wands">Wands</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="potions" name="category" value="potions">
+                    <input type="checkbox" id="potions" name="c2" value="2">
                     <label for="potions">Potions</label>
                 </div>
             </div>
             <div class="col-md-2">
                 <div>
-                    <input type="checkbox" id="creatures" name="category" value="creatures">
+                    <input type="checkbox" id="creatures" name="c3" value="3">
                     <label for="creatures">Creatures</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="robes" name="category" value="robes">
+                    <input type="checkbox" id="robes" name="c4" value="4">
                     <label for="robes">Robes</label>
                 </div>
             </div>
 
             <div class="col-md-2">
                 <div>
-                    <input type="checkbox" id="brooms" name="category" value="brooms">
+                    <input type="checkbox" id="brooms" name="c5" value="5">
                     <label for="brooms">Brooms</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="subscriptions" name="category" value="subscriptions">
+                    <input type="checkbox" id="subscriptions" name="c6" value="6">
                     <label for="subscriptions">Subscriptions</label>
                 </div>
             </div>
 
             <div class="col-md-2">
                 <div>
-                    <input type="checkbox" id="spells" name="category" value="spells">
+                    <input type="checkbox" id="spells" name="c7" value="7">
                     <label for="spells">Spells</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="misc" name="category" value="misc">
+                    <input type="checkbox" id="misc" name="c8" value="8">
                     <label for="misc">Misc</label>
                 </div>
             </div>
@@ -85,11 +85,11 @@
 
         <div class="col-md-2">
             <div>
-                <input type="checkbox" id="services" name="category" value="services">
+                <input type="checkbox" id="services" name="c9" value="9">
                 <label for="services">Services</label>
             </div>
             <div>
-                <input type="checkbox" id="books" name="category" value="books">
+                <input type="checkbox" id="books" name="c10" value="10">
                 <label for="books">Books</label>
             </div>
         </div>
