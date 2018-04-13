@@ -16,7 +16,7 @@
 
 
 <div class="container">
-    <h1>This profile belongs to this <c:out value="${user.username}"/></h1>
+    <h1>This profile belongs to <c:out value="${user.username}"/></h1>
     <img src="${user.profile_pic}" alt="${user.username}">
     <ul class="list-unstyled">
         <li>Member since: <c:out value="${user.created_at}"/></li>
@@ -30,7 +30,7 @@
         </c:when>
         <c:otherwise>
             <c:forEach items="${user.ads}" var="ad">
-                <h3><c:out value="${ad.title}"/></h3>
+                <h3><c:out value="${ad.title}"/> <a class="btn btn-lg" href="/index.jsp" role="button">&#9889;</a></h3>
                 <p><c:out value="${ad.description}"/></p>
                 <p><c:out value="${ad.price}"/></p>
             </c:forEach>
