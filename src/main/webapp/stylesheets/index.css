@@ -12,6 +12,11 @@ fieldset {
     display: inline-block;
 }
 
+
+.rounded-image {
+    border-radius: 50%;
+}
+
 /*css for button*/
 /*.browse {*/
     /*display: inline;*/
