@@ -62,6 +62,8 @@ public class LoginServlet extends HttpServlet {
                 request.getSession().setAttribute("errorMessage", "*Please enter valid password");
             }
 
+
+
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
 
         }
