@@ -30,7 +30,6 @@
     <div class="row">
         <div class="col-xs-12 text-center">
             <ul class="list-inline">
-                <li><button class="btn btn-default">Faves</button></li>
                 <li><button class="btn btn-default">My Ads</button></li>
             </ul>
         </div>
