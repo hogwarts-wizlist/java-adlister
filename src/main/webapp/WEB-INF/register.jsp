@@ -15,32 +15,36 @@
 <body>
 <jsp:include page="partials/navbar.jsp" />
 <div class="container">
-    <h1>Please fill in your information</h1>
+    <div class="col-md-offset-4">
+    <h2>Please fill in your information</h2>
+    </div>
     <form action="/register" method="post">
         <c:if test="${errorMessage != ''}">
         <div class="error">${errorMessage}</div>
         </c:if>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input id="username" name="username" class="form-control" type="text" value="${username}">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" name="username" class="form-control" type="text" value="${username}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" class="form-control" type="text" value="${email}">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" name="password" class="form-control" type="password" value="${password}">
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input id="confirm_password" name="confirm_password" class="form-control" type="password">
+            </div>
+            <div class="form-group">
+                <label for="url">Profile Image</label>
+                <input id="url" name="url" class="form-control" type="text" value="${url}">
+            </div>
+            <input type="submit" class="btn btn-primary btn-block">
         </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" name="email" class="form-control" type="text" value="${email}">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input id="password" name="password" class="form-control" type="password" value="${password}">
-        </div>
-        <div class="form-group">
-            <label for="confirm_password">Confirm Password</label>
-            <input id="confirm_password" name="confirm_password" class="form-control" type="password">
-        </div>
-        <div class="form-group">
-            <label for="url">Profile Image</label>
-            <input id="url" name="url" class="form-control" type="text" value="${url}">
-        </div>
-        <input type="submit" class="btn btn-primary btn-block">
     </form>
 </div>
 </body>

@@ -21,12 +21,5 @@
         </div>
     </div>
 </div>
-
-<%--<div class="container">--%>
-            <%--<div class="browse">--%>
-                <%--<a class="btn btn-primary btn-lg" href="/ads" role="button">Browse Ads</a>--%>
-            <%--</div>--%>
-<%--</div>--%>
-
 </body>
 </html>

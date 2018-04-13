@@ -20,10 +20,13 @@
 <%--POST request--%>
 
 <div class="container">
+    <div class="col-md-offset-5">
     <h1>Create an Ad:</h1>
-    <p class="error">*All fields are required</p>
+    <p class="note">*All fields will be required to submit</p>
+    </div>
     <form action="/create" method="POST">
 
+        <div class="col-md-offset-2 col-md-9">
         <div class="form-group">
             <label for="title">Title</label>
             <input id="title" name="title" class="form-control" value="${title}"type="text" required>
@@ -100,6 +103,7 @@
             <%--<input type="file" name="pic" accept="image/*">--%>
         <%--</div>--%>
         <input type="submit" class="btn btn-primary btn-block" value="Submit">
+        </div>
     </form>
 </div>
 
