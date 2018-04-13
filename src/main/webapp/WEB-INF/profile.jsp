@@ -27,7 +27,7 @@
             <ul class="list-unstyled">
                 <li>My email: <c:out value="${user.email}"/></li>
                 <li>Member since: <c:out value="${user.created_at}"/></li>
-                <li><button class="btn btn-default center">Update Profile</button></li>
+                <li><a href="/updateprofile"><button class="btn btn-default center">Update Profile</button></a></li>
             </ul>
             </div>
         </div>
